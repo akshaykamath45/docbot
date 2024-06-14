@@ -3,3 +3,7 @@ langchain
 faiss-cpu
 pypdf
 tiktoken
+streamlit
+python-dotenv
+langchain-openai
+ragas
