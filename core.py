@@ -7,7 +7,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores.faiss import FAISS
 from pypdf import PdfReader
-import faiss
 
 
 def parse_pdf(file: BytesIO, filename: str) -> Tuple[List[str], str]:
@@ -42,7 +41,7 @@ def text_to_docs(text: List[str], filename: str) -> List[Document]:
                 page_content=chunk, metadata={"page": doc.metadata["page"], "chunk": i}
             )
             doc.metadata["source"] = f"{doc.metadata['page']}-{doc.metadata['chunk']}"
-            doc.metadata["filename"] = filename  # Add filename to metadata
+            doc.metadata["filename"] = filename 
             doc_chunks.append(doc)
     return doc_chunks
 

@@ -1,7 +1,6 @@
-# Import necessary libraries
 import streamlit as st
 import openai
-from brain import get_index_for_pdf
+from core import get_index_for_pdf
 import os
 from dotenv import load_dotenv
 
